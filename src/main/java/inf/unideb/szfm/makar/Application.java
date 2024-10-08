@@ -1,6 +1,7 @@
 package inf.unideb.szfm.makar;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -53,6 +54,24 @@ public class Application {
             System.out.println("Drogon és Nagy Janos letrehozva Enter....");
             (new Scanner(System.in)).nextLine();
 
+            List<Animal> aList = aDAO.getAnimals();
+
+            for(Animal a : aList)
+            {
+                a.setAge(a.getAge()+1);
+                aDAO.saveAnimal(a);
+            }
+
+            System.out.println("Sarkanyok eletkora novelve Enter....");
+            (new Scanner(System.in)).nextLine();
+
+            Zoo zoo = new Zoo();
+            zoo.setName("Dragons KLÁN");
+            zoo.getAnimals().addAll(aList);
+            aDAO.saveZoo(zoo);
+
+            System.out.println("Allatkert elmentve Enter....");
+            (new Scanner(System.in)).nextLine();
         }
 
         System.out.println("Open your browser and navigate to http://localhost:8082/");

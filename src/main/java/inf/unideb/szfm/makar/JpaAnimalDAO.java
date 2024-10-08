@@ -45,6 +45,13 @@ public class JpaAnimalDAO implements AnimalDAO{
     }
 
     @Override
+    public void saveZoo(Zoo zoo) {
+        entityManager.getTransaction().begin();
+        entityManager.persist(zoo);
+        entityManager.getTransaction().commit();
+    }
+
+    @Override
     public void close() throws Exception {
         entityManager.close();
         entityManagerFactory.close();
