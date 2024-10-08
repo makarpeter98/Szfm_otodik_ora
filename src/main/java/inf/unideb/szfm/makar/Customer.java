@@ -1,8 +1,6 @@
 package inf.unideb.szfm.makar;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -11,8 +9,27 @@ public class Customer {
     @Id
     @GeneratedValue
     private Integer id;
-    private String firstName;
-    private String lastName;
+    private String Name;
+
+    @Enumerated(EnumType.STRING)
+    private  GenderEnum Gender;
+    private Integer Age;
+
+    public GenderEnum getGender() {
+        return Gender;
+    }
+
+    public void setGender(GenderEnum gender) {
+        Gender = gender;
+    }
+
+    public Integer getAge() {
+        return Age;
+    }
+
+    public void setAge(Integer age) {
+        Age = age;
+    }
 
     public Integer getId() {
         return id;
@@ -22,20 +39,13 @@ public class Customer {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return Name;
     }
 
-    public void setFirstName(final String firstName) {
-        this.firstName = firstName;
+    public void setName(final String name) {
+        this.Name = name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(final String lastName) {
-        this.lastName = lastName;
-    }
 
 }

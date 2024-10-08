@@ -15,8 +15,9 @@ public class Application {
         final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         Customer customer = new Customer();
-        customer.setFirstName("Dennys");
-        customer.setLastName("Fredericci");
+        customer.setName("Nagy Janos");
+        customer.setGender(GenderEnum.MALE);
+        customer.setAge(70);
 
         entityManager.getTransaction().begin();
         entityManager.persist(customer);
