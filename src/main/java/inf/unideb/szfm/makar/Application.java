@@ -19,9 +19,16 @@ public class Application {
         customer.setGender(GenderEnum.MALE);
         customer.setAge(70);
 
+        Animal dragon = new Animal();
+        dragon.setName("Drogon");
+        dragon.setAge(7);
+        dragon.setGender(GenderEnum.MALE);
+
         entityManager.getTransaction().begin();
         entityManager.persist(customer);
+        entityManager.persist(dragon);
         entityManager.getTransaction().commit();
+
 
         System.out.println("Open your browser and navigate to http://localhost:8082/");
         System.out.println("JDBC URL: jdbc:h2:mem:my_database");
