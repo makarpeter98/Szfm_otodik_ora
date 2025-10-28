@@ -21,8 +21,9 @@ public class SpringDataFxApplication implements CommandLineRunner{
     public void run(String... args) throws Exception {
         personRepository.save(Person.builder().name("Jóska Pista").age(40).build());
         personRepository.save(Person.builder().name("Nagy Erika").age(5).build());
-        personRepository.save(Person.builder().name("Gandals").age(4000).build());
+        personRepository.save(Person.builder().name("Gandalf").age(4000).build());
         personRepository.save(Person.builder().name("Dezső").age(99).build());
+        printAll();
     }
     public void printAll(){
 
