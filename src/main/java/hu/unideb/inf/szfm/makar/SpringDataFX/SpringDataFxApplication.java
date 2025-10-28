@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import hu.unideb.inf.szfm.makar.SpringDataFX.model.PersonRepository;
+import hu.unideb.inf.szfm.makar.SpringDataFX.model.personRepository;
 import hu.unideb.inf.szfm.makar.SpringDataFX.model.Person;
 
 @SpringBootApplication
@@ -15,7 +15,7 @@ public class SpringDataFxApplication implements CommandLineRunner{
 	}
 
     @Autowired
-    PersonRepository personRepository;
+    personRepository personRepository;
 
     @Override
     public void run(String... args) throws Exception {
