@@ -27,8 +27,8 @@ public class SpringDataFxApplication implements CommandLineRunner{
         personRepository.save(Person.builder().name("Gandalf").age(4000).build());
         personRepository.save(Person.builder().name("Dezső").age(99).build());
         printAll();
-        //System.out.println("Nyomj Entert a folytatáshoz...");
-        //scanner.nextLine();
+        System.out.println("Nyomj Entert a folytatáshoz...");
+        scanner.nextLine();
 
         List<Person> persons = personRepository.findAll();
 
@@ -40,8 +40,8 @@ public class SpringDataFxApplication implements CommandLineRunner{
         }
 
         printAll();
-        //System.out.println("Nyomj Entert a folytatáshoz...");
-        //scanner.nextLine();
+        System.out.println("Nyomj Entert a folytatáshoz...");
+        scanner.nextLine();
 
         persons = personRepository.findAll();
         int IdToModify = -1;
