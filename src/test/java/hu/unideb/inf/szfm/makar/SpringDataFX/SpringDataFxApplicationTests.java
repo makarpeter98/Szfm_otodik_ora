@@ -18,6 +18,7 @@ class SpringJavaFxApplicationTests {
     private personRepository personRepository;
     @Test
     void contextLoads() {
+        System.out.println("Test futtatasa!");
         Person person = Person.builder()
                 .age(20)
                 .name("Sanyi a ló")
